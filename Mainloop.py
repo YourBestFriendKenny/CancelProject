@@ -7,7 +7,7 @@ os.environ["FLET_WS_MAX_MESSAGE_SIZE"] = "8000000"
 def main(page: ft.Page):
     
     r = ft.Row(wrap=True, scroll="always")
-    c = ft.ListView(height=200, width=200, spacing=10)
+    c = ft.ListView(expand=True, spacing=10) #место expand можно указать height и width
     r = c
     page.add(r)
 
