@@ -1,29 +1,37 @@
 import flet as ft
+import os
+
+os.environ["FLET_WS_MAX_MESSAGE_SIZE"] = "8000000"
+
 
 def main(page: ft.Page):
-    page.title = "CancelProject"
-    page.horizontal_alignment = ft.MainAxisAlignment.CENTER
     
+    r = ft.Row(wrap=True, scroll="always")
+    c = ft.ListView(height=200, width=200, spacing=10)
+    r = c
+    page.add(r)
 
-    txt_number = ft.TextField(value="0", text_align=ft.TextAlign.RIGHT, width=100)
 
-    def minus_click(e):
-        txt_number.value = str(int(txt_number.value) - 1)
-        page.update()
-
-    def plus_click(e):
-        txt_number.value = str(int(txt_number.value) + 1)
-        page.update()
-
-    page.add(
-        ft.Row(
-            [
-                ft.IconButton(ft.icons.REMOVE, on_click=minus_click),
-                txt_number,
-                ft.IconButton(ft.icons.ADD, on_click=plus_click),
-            ],
-            alignment=ft.MainAxisAlignment.CENTER,
-        )
-    )
-
+    for i in range(1000):
+        r.controls.append(
+            ft.Container(
+                ft.Text(f"item {i}"),
+                width=100,
+                height=100,
+                alignment=ft.alignment.center,
+                bgcolor=ft.colors.AMBER_100,
+                border=ft.border.all(1, ft.colors.AMBER_400),
+                border_radius=ft.border_radius.all(5),
+                )
+            )
+        
+        
+        
+        
+        
+        
+        
+        
+    page.update()
 ft.app(target=main)
+
