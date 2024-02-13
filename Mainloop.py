@@ -3,14 +3,17 @@ import os
 
 os.environ["FLET_WS_MAX_MESSAGE_SIZE"] = "8000000"
 
+def number():
+    print("mksasakksksks")
 
 def main(page: ft.Page):
     
     r = ft.Row(wrap=True, scroll="always")
     c = ft.ListView(expand=True, spacing=10) #место expand можно указать height и width
     r = c
+    
     page.add(r)
-
+    
 
     for i in range(1000):
         r.controls.append(
@@ -35,3 +38,5 @@ def main(page: ft.Page):
     page.update()
 ft.app(target=main)
 
+if __name__ == "__main__":
+    main()
