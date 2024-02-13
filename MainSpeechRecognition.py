@@ -1,6 +1,6 @@
 import speech_recognition as sr
 import pygame
-from MainMusicStart import Music
+from MainMusicStart import Music1, Music2
 
 def recognize_speech():
     recognizer = sr.Recognizer()
@@ -30,8 +30,11 @@ def main():
         # Когда кнопка нажата:
         command = recognize_speech()
         if command:
-            if "включи музыку" in command:
-                Music()
+            if "включи песню bad blood" in command:
+                Music1()
+        if command:
+            if "включи песню ocean eyes" in command:
+                Music2()
 
 if __name__ == "__main__":
     main()
