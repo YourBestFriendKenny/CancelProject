@@ -16,10 +16,8 @@ def recognize_speech():
         print("Невозможно распознать речь")
     except sr.RequestError as e:
         print("Ошибка сервиса распознавания речи; {0}".format(e))
+    
 
-def play_music():
-    # Здесь ваш код для запуска музыки
-    pass
 
 def main():
     pygame.init()
