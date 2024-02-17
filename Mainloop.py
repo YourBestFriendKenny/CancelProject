@@ -6,8 +6,6 @@ import MainRec as rec
 def main(page):
 
 
-
-
     page.add(
         ft.ElevatedButton("Say hello!", on_click=lambda _: rec.recognize_speech())
     )
