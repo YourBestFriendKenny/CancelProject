@@ -7,6 +7,7 @@ from MainMusicStart import Music1, Music2
 
 
 
+
 def recognize_speech(): #   функция распознования речи и включающая трек
     r = sr.Recognizer()
 
@@ -27,9 +28,11 @@ def recognize_speech(): #   функция распознования речи �
         text = r.recognize_google(audio, language="ru-RU")
         if text.lower() in commands:
             Music1()
+            
         else:
             print("я не могу распознать")
     except sr.UnknownValueError:
                 print("Извините, не удалось распознать вашу речь.")
+
 
 

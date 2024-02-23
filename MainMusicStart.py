@@ -1,4 +1,5 @@
-import pygame 
+import pygame
+
 
 
 def Music1():
@@ -9,6 +10,7 @@ def Music1():
     while True:
         clock.tick(60)
     pygame.quit()
+
 
 
 
