@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ui_main.ui'
+# Form implementation generated from reading ui file 'ui_main2.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
@@ -9,147 +9,163 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from res_rc import *
+
 
 
 class Ui_Form(object):
-        def setupUi(self, Form):
-                Form.setObjectName("Form")
-                Form.setEnabled(True)
-                Form.resize(1008, 657)
-                self.widget = QtWidgets.QWidget(Form)
-                self.widget.setGeometry(QtCore.QRect(-130, -110, 1321, 1001))
-                self.widget.setObjectName("widget")
-                self.textEdit = QtWidgets.QTextEdit(self.widget)
-                self.textEdit.setGeometry(QtCore.QRect(140, 670, 961, 91))
-                self.textEdit.setStyleSheet("background-color: rgb(0,0,0,100);\n"
-        "border-radius: 20px;\n"
-        "")
-                self.textEdit.setObjectName("textEdit")
-                self.pushButton = QtWidgets.QPushButton(self.widget)
-                self.pushButton.setGeometry(QtCore.QRect(290, 700, 61, 31))
-                self.pushButton.setStyleSheet("QPushButton{\n"
-        "background-color: rgba(0,0,0,0);\n"
-        "border: 2px solid rgba(255,33,100,230);\n"
-        "border-radius: 10px;\n"
-        "}")
-                self.pushButton.setObjectName("pushButton")
-                self.pushButton_2 = QtWidgets.QPushButton(self.widget)
-                self.pushButton_2.setGeometry(QtCore.QRect(360, 700, 61, 31))
-                self.pushButton_2.setStyleSheet("QPushButton{\n"
-        "background-color: rgba(0,0,0,0);\n"
-        "border: 2px solid rgba(255,33,100,230);\n"
-        "border-radius: 10px;\n"
-        "\n"
-        "}")
-                self.pushButton_2.setIconSize(QtCore.QSize(16, 16))
-                self.pushButton_2.setObjectName("pushButton_2")
-                self.pushButton_3 = QtWidgets.QPushButton(self.widget)
-                self.pushButton_3.setGeometry(QtCore.QRect(430, 700, 61, 31))
-                self.pushButton_3.setStyleSheet("QPushButton{\n"
-        "background-color: rgba(0,0,0,0);\n"
-        "border: 2px solid rgba(255,33,100,230);\n"
-        "border-radius: 10px;\n"
-        "\n"
-        "}")
-                self.pushButton_3.setObjectName("pushButton_3")
-                self.textEdit_2 = QtWidgets.QTextEdit(self.widget)
-                self.textEdit_2.setGeometry(QtCore.QRect(130, 110, 1011, 661))
-                self.textEdit_2.setStyleSheet("background-color: rgba(255, 193, 179, 0.60);\n"
-        "border-radius: 1px;\n"
-        "")
-                self.textEdit_2.setObjectName("textEdit_2")
-                self.label = QtWidgets.QLabel(self.widget)
-                self.label.setGeometry(QtCore.QRect(600, 610, 1221, 941))
-                self.label.setStyleSheet("QLabel{\n"
-        "\n"
-        "}")
-                self.label.setText("")
-                self.label.setObjectName("label")
-                self.listWidget = QtWidgets.QListWidget(self.widget)
-                self.listWidget.setGeometry(QtCore.QRect(340, 130, 731, 451))
-                self.listWidget.setObjectName("listWidget")
-                self.textEdit_3 = QtWidgets.QTextEdit(self.widget)
-                self.textEdit_3.setGeometry(QtCore.QRect(120, 110, 171, 551))
-                self.textEdit_3.setStyleSheet("background-color: rgba(255, 193, 179, 1);\n"
-        "\n"
-        "")
-                self.textEdit_3.setObjectName("textEdit_3")
-                self.textEdit_4 = QtWidgets.QTextEdit(self.widget)
-                self.textEdit_4.setGeometry(QtCore.QRect(120, 660, 1021, 151))
-                self.textEdit_4.setStyleSheet("background-color: rgba(255, 193, 179, 1);")
-                self.textEdit_4.setObjectName("textEdit_4")
-                self.horizontalSlider = QtWidgets.QSlider(self.widget)
-                self.horizontalSlider.setGeometry(QtCore.QRect(180, 690, 101, 51))
-                self.horizontalSlider.setOrientation(QtCore.Qt.Horizontal)
-                self.horizontalSlider.setObjectName("horizontalSlider")
-                self.pushButton_4 = QtWidgets.QPushButton(self.widget)
-                self.pushButton_4.setGeometry(QtCore.QRect(600, 590, 91, 51))
-                self.pushButton_4.setStyleSheet("QPushButton{\n"
-        "background-color: rgba(0,0,0,0);\n"
-        "border: 2px solid rgba(255,33,100,230);\n"
-        "border-radius: 10px;\n"
-        "\n"
-        "}")
-                self.pushButton_4.setObjectName("pushButton_4")
-                self.pushButton_5 = QtWidgets.QPushButton(self.widget)
-                self.pushButton_5.setGeometry(QtCore.QRect(710, 590, 91, 51))
-                self.pushButton_5.setStyleSheet("QPushButton{\n"
-        "background-color: rgba(0,0,0,0);\n"
-        "border: 2px solid rgba(255,33,100,230);\n"
-        "border-radius: 10px;\n"
-        "\n"
-        "}")
-                self.pushButton_5.setObjectName("pushButton_5")
-                self.textEdit_5 = QtWidgets.QTextEdit(self.widget)
-                self.textEdit_5.setGeometry(QtCore.QRect(550, 580, 301, 70))
-                self.textEdit_5.setStyleSheet("background-color: rgb(0,0,0,100);\n"
-        "border-radius: 20px;\n"
-        "")
-                self.textEdit_5.setObjectName("textEdit_5")
-                self.verticalSlider = QtWidgets.QSlider(self.widget)
-                self.verticalSlider.setGeometry(QtCore.QRect(1080, 130, 21, 451))
-                self.verticalSlider.setStyleSheet("QSlider::groove:vertical{\n"
-        "background-color: rgba(0,0,0,100);\n"
-        "border-radius: 10px\n"
-        "}\n"
-        "\n"
-        "QSlider::handle:vertical{\n"
-        "width: 10px;\n"
-        "height: 30px;\n"
-        "padding: 5px;\n"
-        "background-color: rgba(255,33,100,230);\n"
-        "border-radius: 10px;\n"
-        "\n"
-        "}")
-                self.verticalSlider.setOrientation(QtCore.Qt.Vertical)
-                self.verticalSlider.setObjectName("verticalSlider")
-                self.textEdit_2.raise_()
-                self.label.raise_()
-                self.listWidget.raise_()
-                self.textEdit_3.raise_()
-                self.textEdit_4.raise_()
-                self.textEdit.raise_()
-                self.pushButton_3.raise_()
-                self.pushButton_2.raise_()
-                self.pushButton.raise_()
-                self.horizontalSlider.raise_()
-                self.textEdit_5.raise_()
-                self.pushButton_4.raise_()
-                self.pushButton_5.raise_()
-                self.verticalSlider.raise_()
+    def setupUi(self, Form):
+        Form.setObjectName("Form")
+        Form.setEnabled(True)
+        Form.resize(990, 657)
+        self.widget = QtWidgets.QWidget(Form)
+        self.widget.setGeometry(QtCore.QRect(-140, -130, 1321, 1001))
+        self.widget.setObjectName("widget")
+        self.pushbutton_play = QtWidgets.QPushButton(self.widget)
+        self.pushbutton_play.setGeometry(QtCore.QRect(360, 700, 61, 31))
+        self.pushbutton_play.setStyleSheet("QPushButton{\n"
+"background-color: rgba(244,107,56);\n"
+"border:2px solid rgb(239,87,51);\n"
+"border-radius: 10px;\n"
+"\n"
+"\n"
+"}")
+        self.pushbutton_play.setIconSize(QtCore.QSize(16, 16))
+        self.pushbutton_play.setObjectName("pushbutton_play")
+        self.pushbutton_next = QtWidgets.QPushButton(self.widget)
+        self.pushbutton_next.setGeometry(QtCore.QRect(430, 700, 61, 31))
+        self.pushbutton_next.setStyleSheet("QPushButton{\n"
+"background-color: rgba(244,107,56);\n"
+"border:2px solid rgb(239,87,51);\n"
+"border-radius: 10px;\n"
+"\n"
+"\n"
+"}")
+        self.pushbutton_next.setObjectName("pushbutton_next")
+        self.horizontalSlider_vol = QtWidgets.QSlider(self.widget)
+        self.horizontalSlider_vol.setGeometry(QtCore.QRect(180, 690, 101, 51))
+        self.horizontalSlider_vol.setOrientation(QtCore.Qt.Horizontal)
+        self.horizontalSlider_vol.setObjectName("horizontalSlider_vol")
+        self.widget_2 = QtWidgets.QWidget(self.widget)
+        self.widget_2.setGeometry(QtCore.QRect(130, 120, 161, 521))
+        self.widget_2.setStyleSheet("background-color:      rgb(250,146,77);")
+        self.widget_2.setObjectName("widget_2")
+        self.pushbutton_albums = QtWidgets.QPushButton(self.widget_2)
+        self.pushbutton_albums.setGeometry(QtCore.QRect(30, 210, 89, 31))
+        self.pushbutton_albums.setStyleSheet("QPushButton{\n"
+"background-color: rgba(244,107,56);\n"
+"border:2px solid rgb(239,87,51);\n"
+"border-radius: 10px;\n"
+"\n"
+"}")
+        self.pushbutton_albums.setObjectName("pushbutton_albums")
+        self.label = QtWidgets.QLabel(self.widget_2)
+        self.label.setGeometry(QtCore.QRect(30, 30, 61, 31))
+        self.label.setStyleSheet("QLabel{\n"
+"background-color: rgba(244,107,56);\n"
+"border-radius: 10px;\n"
+"}")
+        self.label.setTextFormat(QtCore.Qt.MarkdownText)
+        self.label.setObjectName("label")
+        self.pushbutton_listsong = QtWidgets.QPushButton(self.widget_2)
+        self.pushbutton_listsong.setGeometry(QtCore.QRect(30, 120, 89, 31))
+        self.pushbutton_listsong.setStyleSheet("QPushButton{\n"
+"background-color: rgba(244,107,56);\n"
+"border:2px solid rgb(239,87,51);\n"
+"border-radius: 10px;\n"
+"\n"
+"}")
+        self.pushbutton_listsong.setObjectName("pushbutton_listsong")
+        self.pushbutton_home = QtWidgets.QPushButton(self.widget_2)
+        self.pushbutton_home.setGeometry(QtCore.QRect(30, 70, 89, 31))
+        self.pushbutton_home.setStyleSheet("QPushButton{\n"
+"background-color: rgba(244,107,56);\n"
+"border: 2px solid rgb(239,87,51);\n"
+"border-radius: 10px;\n"
+"\n"
+"}")
+        self.pushbutton_home.setObjectName("pushbutton_home")
+        self.pushbutton_artists = QtWidgets.QPushButton(self.widget_2)
+        self.pushbutton_artists.setGeometry(QtCore.QRect(30, 160, 89, 31))
+        self.pushbutton_artists.setStyleSheet("QPushButton{\n"
+"background-color: rgba(244,107,56);\n"
+"border:2px solid rgb(239,87,51);\n"
+"border-radius: 10px;\n"
+"\n"
+"}")
+        self.pushbutton_artists.setObjectName("pushbutton_artists")
+        self.widget_3 = QtWidgets.QWidget(self.widget)
+        self.widget_3.setGeometry(QtCore.QRect(129, 639, 1001, 151))
+        self.widget_3.setStyleSheet("background-color: rgba(255, 193, 179, 255);")
+        self.widget_3.setObjectName("widget_3")
+        self.widget_4 = QtWidgets.QWidget(self.widget_3)
+        self.widget_4.setGeometry(QtCore.QRect(30, 40, 941, 80))
+        self.widget_4.setStyleSheet("background-color:      rgb(250,146,77);\n"
+"border-radius: 20px;\n"
+"")
+        self.widget_4.setObjectName("widget_4")
+        self.pushbutton_back = QtWidgets.QPushButton(self.widget)
+        self.pushbutton_back.setGeometry(QtCore.QRect(290, 700, 61, 31))
+        self.pushbutton_back.setStyleSheet("QPushButton{\n"
+"background-color: rgba(244,107,56);\n"
+"border:2px solid rgb(239,87,51);\n"
+"border-radius: 10px;\n"
+"\n"
+"}")
+        self.pushbutton_back.setObjectName("pushbutton_back")
+        self.stackedWidget = QtWidgets.QStackedWidget(self.widget)
+        self.stackedWidget.setGeometry(QtCore.QRect(330, 160, 781, 441))
+        self.stackedWidget.setObjectName("stackedWidget")
+        self.page = QtWidgets.QWidget()
+        self.page.setObjectName("page")
+        self.label_home = QtWidgets.QLabel(self.page)
+        self.label_home.setGeometry(QtCore.QRect(220, 130, 251, 161))
+        self.label_home.setObjectName("label_home")
+        self.stackedWidget.addWidget(self.page)
+        self.page_2 = QtWidgets.QWidget()
+        self.page_2.setObjectName("page_2")
+        self.label_song = QtWidgets.QLabel(self.page_2)
+        self.label_song.setGeometry(QtCore.QRect(290, 180, 67, 17))
+        self.label_song.setObjectName("label_song")
+        self.stackedWidget.addWidget(self.page_2)
+        self.page_3 = QtWidgets.QWidget()
+        self.page_3.setObjectName("page_3")
+        self.label_artists = QtWidgets.QLabel(self.page_3)
+        self.label_artists.setGeometry(QtCore.QRect(280, 160, 67, 17))
+        self.label_artists.setObjectName("label_artists")
+        self.stackedWidget.addWidget(self.page_3)
+        self.page_4 = QtWidgets.QWidget()
+        self.page_4.setObjectName("page_4")
+        self.label_albums = QtWidgets.QLabel(self.page_4)
+        self.label_albums.setGeometry(QtCore.QRect(320, 140, 67, 17))
+        self.label_albums.setObjectName("label_albums")
+        self.stackedWidget.addWidget(self.page_4)
+        self.widget_3.raise_()
+        self.pushbutton_next.raise_()
+        self.pushbutton_play.raise_()
+        self.horizontalSlider_vol.raise_()
+        self.widget_2.raise_()
+        self.pushbutton_back.raise_()
+        self.stackedWidget.raise_()
 
-                self.retranslateUi(Form)
-                QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(Form)
+        self.stackedWidget.setCurrentIndex(0)
+        QtCore.QMetaObject.connectSlotsByName(Form)
 
-        def retranslateUi(self, Form):
-                _translate = QtCore.QCoreApplication.translate
-                Form.setWindowTitle(_translate("Form", "")) # изменить название окна
-                self.pushButton.setText(_translate("Form", "<"))
-                self.pushButton_2.setText(_translate("Form", "play"))
-                self.pushButton_3.setText(_translate("Form", ">"))
-                self.pushButton_4.setText(_translate("Form", "Add"))
-                self.pushButton_5.setText(_translate("Form", "Remove"))
+    def retranslateUi(self, Form):
+        _translate = QtCore.QCoreApplication.translate
+        Form.setWindowTitle(_translate("Form", "Form"))
+        self.pushbutton_play.setText(_translate("Form", "play"))
+        self.pushbutton_next.setText(_translate("Form", ">"))
+        self.pushbutton_albums.setText(_translate("Form", "Albums"))
+        self.label.setText(_translate("Form", " Peach🍑"))
+        self.pushbutton_listsong.setText(_translate("Form", "Song"))
+        self.pushbutton_home.setText(_translate("Form", "Home"))
+        self.pushbutton_artists.setText(_translate("Form", "Artists"))
+        self.pushbutton_back.setText(_translate("Form", "<"))
+        self.label_home.setText(_translate("Form", "Home"))
+        self.label_song.setText(_translate("Form", "Song"))
+        self.label_artists.setText(_translate("Form", "Artists"))
+        self.label_albums.setText(_translate("Form", "Albums"))
 if __name__ == "__main__":
         import sys
         app = QtWidgets.QApplication(sys.argv)
