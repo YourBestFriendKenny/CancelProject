@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>990</width>
-    <height>657</height>
+    <width>1165</width>
+    <height>844</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,16 +28,15 @@
    <widget class="QWidget" name="widget_2" native="true">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>130</x>
       <y>90</y>
-      <width>1051</width>
-      <height>681</height>
+      <width>1251</width>
+      <height>901</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:  	rgb(250,146,77);
+     <string notr="true">background-color:  	rgb(246,229,213);
 
-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 229, 167, 208), stop:1 rgba(255, 37, 37, 201));
 
 
 
@@ -46,7 +45,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>480</x>
+       <x>560</x>
        <y>10</y>
        <width>71</width>
        <height>31</height>
@@ -54,7 +53,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
      </property>
      <property name="styleSheet">
       <string notr="true">QLabel{
-background-color: rgba(244,107,56);
+background-color: rgba(254,143,113);
 border-radius: 10px;
 border: 2px solid rgb(239,87,51);
 }</string>
@@ -69,7 +68,7 @@ border: 2px solid rgb(239,87,51);
     <widget class="QWidget" name="widget_4" native="true">
      <property name="geometry">
       <rect>
-       <x>320</x>
+       <x>400</x>
        <y>490</y>
        <width>381</width>
        <height>71</height>
@@ -77,7 +76,7 @@ border: 2px solid rgb(239,87,51);
      </property>
      <property name="styleSheet">
       <string notr="true">
-background-color:  	rgb(244,107,56);
+background-color:  	rgb(254,143,113);
 border-radius: 20px;
 
 </string>
@@ -103,7 +102,7 @@ border-radius: 10px;</string>
     <widget class="QPushButton" name="pushbutton_next">
      <property name="geometry">
       <rect>
-       <x>610</x>
+       <x>690</x>
        <y>510</y>
        <width>61</width>
        <height>31</height>
@@ -112,7 +111,7 @@ border-radius: 10px;</string>
      <property name="styleSheet">
       <string notr="true">QPushButton{
 background-color:  	rgb(241,151,116);
-border:2px solid rgb(239,87,51);
+border: 1px solid rgb(0,0,0);
 border-radius: 10px;
 
 
@@ -125,7 +124,7 @@ border-radius: 10px;
     <widget class="QPushButton" name="pushbutton_back">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>550</x>
        <y>510</y>
        <width>61</width>
        <height>31</height>
@@ -134,7 +133,7 @@ border-radius: 10px;
      <property name="styleSheet">
       <string notr="true">QPushButton{
 background-color:  	rgb(241,151,116);
-border:2px solid rgb(239,87,51);
+border: 1px solid rgb(0,0,0);
 border-radius: 10px;
 
 }</string>
@@ -146,7 +145,7 @@ border-radius: 10px;
     <widget class="QPushButton" name="pushbutton_play">
      <property name="geometry">
       <rect>
-       <x>540</x>
+       <x>620</x>
        <y>510</y>
        <width>61</width>
        <height>31</height>
@@ -155,11 +154,13 @@ border-radius: 10px;
      <property name="styleSheet">
       <string notr="true">QPushButton{
 background-color:  	rgb(241,151,116);
-border:2px solid rgb(239,87,51);
+border: 1px solid rgb(0,0,0); 
 border-radius: 10px;
 
 
-}</string>
+}
+
+#239,87,51</string>
      </property>
      <property name="text">
       <string>play</string>
@@ -171,87 +172,122 @@ border-radius: 10px;
       </size>
      </property>
     </widget>
-   </widget>
-   <widget class="QWidget" name="widget_5" native="true">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>200</y>
-      <width>561</width>
-      <height>371</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border: 2px solid rgb(0,0,0);
-border-radius: 60px;</string>
-    </property>
-    <widget class="QListWidget" name="listWidget">
+    <widget class="QWidget" name="widget_5" native="true">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>541</width>
-       <height>351</height>
+       <x>310</x>
+       <y>110</y>
+       <width>561</width>
+       <height>371</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QListWidget{
-border: 1px solid rgb(255,255,255);
-background-color:  	rgb(255,255,255);
+      <string notr="true">border: 2px solid rgb(0,0,0);
 border-radius: 60px;
-
-}
-</string>
+background-color: rgb(85,75,76);</string>
      </property>
+     <widget class="QWidget" name="widget_3" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>541</width>
+        <height>351</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid rgb(255,255,255);
+background-color:  	rgb(255,255,255);
+border-radius: 60px;</string>
+      </property>
+      <widget class="QListWidget" name="listWidget">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>30</y>
+         <width>481</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="whatsThis">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+      </widget>
+     </widget>
     </widget>
-   </widget>
-   <widget class="QWidget" name="widget_6" native="true">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>130</y>
-      <width>561</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border:1px solid rgb(0,0,0);
+    <widget class="QWidget" name="widget_6" native="true">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>40</y>
+       <width>561</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:1px solid rgb(0,0,0);
 border-radius: 10px;
-background-color:  	rgb(244,107,56);</string>
-    </property>
-    <widget class="QLineEdit" name="lineEdit">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>10</y>
-       <width>401</width>
-       <height>41</height>
-      </rect>
+background-color:  	rgb(254,143,113);</string>
      </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgba(255,255,255);</string>
-     </property>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>10</y>
+        <width>401</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255,255,255);</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>14</y>
+        <width>89</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:  	rgb(241,151,116);</string>
+      </property>
+      <property name="text">
+       <string>🍑</string>
+      </property>
+     </widget>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="pushbutton_add">
      <property name="geometry">
       <rect>
-       <x>450</x>
-       <y>14</y>
+       <x>800</x>
+       <y>500</y>
        <width>89</width>
-       <height>31</height>
+       <height>25</height>
       </rect>
      </property>
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
      <property name="styleSheet">
-      <string notr="true">background-color:  	rgb(241,151,116);</string>
+      <string notr="true">QPushButton{
+background-color:  	rgb(241,151,116);
+border: 1px solid rgb(0,0,0);
+border-radius: 10px;
+
+
+}</string>
      </property>
      <property name="text">
-      <string>🍑</string>
+      <string>Add</string>
      </property>
     </widget>
    </widget>
