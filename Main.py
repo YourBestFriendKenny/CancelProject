@@ -39,17 +39,16 @@ class Player(QWidget, GuiMain.Ui_Form):
 
 
     def play_sound(self):
-        item = self.listWidget.currentItem()
-        
-        if item:
-            filename = os.path.join(self.dir, item.text())
-            self.sound_mixer.music.load(filename)
-        else:
-            self.listWidget.currentRow(0)
-        self.sound_mixer.music.play()
+            item = self.listWidget.currentItem()
+            
+            if item:
+                filename = os.path.join(self.dir, item.text())
+                self.sound_mixer.music.load(filename)
+            else:
+                self.listWidget.currentRow(0)
+            self.sound_mixer.music.play()
 
-
-
+            
 
     def back_sound(self):
         try:
@@ -69,9 +68,9 @@ class Player(QWidget, GuiMain.Ui_Form):
 
 
 
-
     def add_sound(self):
-        self.listWidget.clear()
+        
+        self.sound_mixer.music.stop()
 
         dir = QtWidgets.QFileDialog.getExistingDirectory(self, "Select Direction")
 
@@ -91,8 +90,6 @@ if __name__ == "__main__":
     player = Player()
     player.show()
     app.exec()
-
-
 
 
 
