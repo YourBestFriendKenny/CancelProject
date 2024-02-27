@@ -21,19 +21,16 @@ class Player(QWidget, GuiMain.Ui_Form):
         # двойное нажание по треку включит его
         self.listWidget.doubleClicked.connect(self.toggle_sound)
 
-        # устанавливаем громкость по умолчанию
         self.horizontalSlider.setMinimum(0)
         self.horizontalSlider.setMaximum(100)
         self.horizontalSlider.setValue(50)
         self.horizontalSlider.valueChanged.connect(self.volume_reg)
 
-        # нужная нам дериктория загружается в listWidget
         self.dir = ""
         self.sound_mixer = mixer
         self.sound_mixer.init()
         self.is_playing = False
 
-    # проверка состояния музыки
     def toggle_sound(self):
         if self.is_playing:
             self.sound_mixer.music.stop()
@@ -48,7 +45,6 @@ class Player(QWidget, GuiMain.Ui_Form):
                 self.is_playing = True
                 self.pushbutton_play.setText("Stop")
 
-    # предыдущая музыка
     def back_sound(self):
         try:
             row = self.listWidget.currentRow()
@@ -58,7 +54,6 @@ class Player(QWidget, GuiMain.Ui_Form):
         except TypeError:
             pass
 
-    # следующая музыка
     def next_sound(self):
         try:
             row = self.listWidget.currentRow()
@@ -67,8 +62,7 @@ class Player(QWidget, GuiMain.Ui_Form):
             self.toggle_sound()
         except TypeError:
             pass
-    
-    # добавить директорию
+
     def add_sound(self):
         self.sound_mixer.music.stop()
         dir = QtWidgets.QFileDialog.getExistingDirectory(self, "Select Direction")
@@ -77,7 +71,7 @@ class Player(QWidget, GuiMain.Ui_Form):
                 if filename.endswith(".mp3"):
                     self.listWidget.addItem(os.path.join(filename))
             self.dir = dir
-    # регулировка громкости
+
     def volume_reg(self):
         self.sound_mixer.music.set_volume(self.horizontalSlider.value() / 100)
 
