@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ui_main2.ui'
+# Form implementation generated from reading ui file 'ui_main3.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
@@ -29,16 +29,18 @@ class Ui_Form(object):
 "")
         self.widget_2.setObjectName("widget_2")
         self.label = QtWidgets.QLabel(self.widget_2)
-        self.label.setGeometry(QtCore.QRect(560, 30, 71, 31))
+        self.label.setGeometry(QtCore.QRect(540, 30, 91, 41))
         self.label.setStyleSheet("QLabel{\n"
 "background-color: rgba(254,143,113);\n"
 "border-radius: 10px;\n"
 "border: 2px solid rgb(239,87,51);\n"
+"font-weight: 500;\n"
+"font-size: 20px;\n"
 "}")
         self.label.setTextFormat(QtCore.Qt.MarkdownText)
         self.label.setObjectName("label")
         self.widget_4 = QtWidgets.QWidget(self.widget_2)
-        self.widget_4.setGeometry(QtCore.QRect(340, 570, 501, 71))
+        self.widget_4.setGeometry(QtCore.QRect(310, 570, 561, 71))
         self.widget_4.setStyleSheet("\n"
 "background-color:      rgb(254,143,113);\n"
 "border-radius: 20px;\n"
@@ -46,13 +48,13 @@ class Ui_Form(object):
 "")
         self.widget_4.setObjectName("widget_4")
         self.horizontalSlider = QtWidgets.QSlider(self.widget_4)
-        self.horizontalSlider.setGeometry(QtCore.QRect(10, 22, 121, 20))
+        self.horizontalSlider.setGeometry(QtCore.QRect(10, 10, 81, 51))
         self.horizontalSlider.setStyleSheet("\n"
 "border-radius: 10px;")
         self.horizontalSlider.setOrientation(QtCore.Qt.Horizontal)
         self.horizontalSlider.setObjectName("horizontalSlider")
         self.pushbutton_add = QtWidgets.QPushButton(self.widget_4)
-        self.pushbutton_add.setGeometry(QtCore.QRect(400, 20, 89, 31))
+        self.pushbutton_add.setGeometry(QtCore.QRect(440, 20, 89, 31))
         self.pushbutton_add.setStyleSheet("QPushButton{\n"
 "background-color:      rgb(241,151,116);\n"
 "border: 1px solid rgb(0,0,0);\n"
@@ -62,7 +64,7 @@ class Ui_Form(object):
 "}")
         self.pushbutton_add.setObjectName("pushbutton_add")
         self.pushbutton_next = QtWidgets.QPushButton(self.widget_4)
-        self.pushbutton_next.setGeometry(QtCore.QRect(300, 20, 61, 31))
+        self.pushbutton_next.setGeometry(QtCore.QRect(240, 20, 61, 31))
         self.pushbutton_next.setStyleSheet("QPushButton{\n"
 "background-color:      rgb(241,151,116);\n"
 "border: 1px solid rgb(0,0,0);\n"
@@ -72,7 +74,7 @@ class Ui_Form(object):
 "}")
         self.pushbutton_next.setObjectName("pushbutton_next")
         self.pushbutton_play = QtWidgets.QPushButton(self.widget_4)
-        self.pushbutton_play.setGeometry(QtCore.QRect(230, 20, 61, 31))
+        self.pushbutton_play.setGeometry(QtCore.QRect(170, 20, 61, 31))
         self.pushbutton_play.setStyleSheet("QPushButton{\n"
 "background-color:      rgb(241,151,116);\n"
 "border: 1px solid rgb(0,0,0); \n"
@@ -85,7 +87,7 @@ class Ui_Form(object):
         self.pushbutton_play.setIconSize(QtCore.QSize(16, 16))
         self.pushbutton_play.setObjectName("pushbutton_play")
         self.pushbutton_back = QtWidgets.QPushButton(self.widget_4)
-        self.pushbutton_back.setGeometry(QtCore.QRect(160, 20, 61, 31))
+        self.pushbutton_back.setGeometry(QtCore.QRect(100, 20, 61, 31))
         self.pushbutton_back.setStyleSheet("QPushButton{\n"
 "background-color:      rgb(241,151,116);\n"
 "border: 1px solid rgb(0,0,0);\n"
@@ -93,6 +95,16 @@ class Ui_Form(object):
 "\n"
 "}")
         self.pushbutton_back.setObjectName("pushbutton_back")
+        self.pushbutton_remove = QtWidgets.QPushButton(self.widget_4)
+        self.pushbutton_remove.setGeometry(QtCore.QRect(340, 20, 89, 31))
+        self.pushbutton_remove.setStyleSheet("QPushButton{\n"
+"background-color:      rgb(241,151,116);\n"
+"border: 1px solid rgb(0,0,0);\n"
+"border-radius: 10px;\n"
+"\n"
+"\n"
+"}")
+        self.pushbutton_remove.setObjectName("pushbutton_remove")
         self.widget_5 = QtWidgets.QWidget(self.widget_2)
         self.widget_5.setGeometry(QtCore.QRect(310, 180, 561, 371))
         self.widget_5.setStyleSheet("border: 2px solid rgb(0,0,0);\n"
@@ -137,10 +149,12 @@ class Ui_Form(object):
         self.label.setText(_translate("Form", " Peach🍑"))
         self.pushbutton_add.setText(_translate("Form", "Add"))
         self.pushbutton_next.setText(_translate("Form", ">"))
-        self.pushbutton_play.setText(_translate("Form", "play"))
+        self.pushbutton_play.setText(_translate("Form", "▶"))
         self.pushbutton_back.setText(_translate("Form", "<"))
+        self.pushbutton_remove.setText(_translate("Form", "Remove"))
         self.listWidget.setWhatsThis(_translate("Form", "<html><head/><body><p><br/></p></body></html>"))
         self.pushButton.setText(_translate("Form", "🍑"))
+
 
 if __name__ == "__main__":
         import sys
@@ -150,4 +164,3 @@ if __name__ == "__main__":
         ui.setupUi(Form)
         Form.show()
         sys.exit(app.exec_())
-
