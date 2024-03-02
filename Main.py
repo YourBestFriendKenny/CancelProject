@@ -17,7 +17,7 @@ class Player(QWidget, GuiMain.Ui_Form):
         self.pushbutton_back.clicked.connect(self.back_sound)
         self.pushbutton_next.clicked.connect(self.next_sound)   
         self.pushbutton_add.clicked.connect(self.add_sound)
-        #self.pushbutton_remove.clicked.connect(self.remove_sound) кновка удаление музыки
+        self.pushbutton_remove.clicked.connect(self.remove_sound)
 
         # двойное нажание по треку включит его
         self.listWidget.doubleClicked.connect(self.toggle_sound)
@@ -40,7 +40,7 @@ class Player(QWidget, GuiMain.Ui_Form):
         if self.is_playing:
             self.sound_mixer.music.stop()
             self.is_playing = False
-            self.pushbutton_play.setText("▶")
+            self.pushbutton_play.setText("Play")
         else:
             item = self.listWidget.currentItem()
             if item:
@@ -48,12 +48,15 @@ class Player(QWidget, GuiMain.Ui_Form):
                 self.sound_mixer.music.load(filename)
                 self.sound_mixer.music.play()
                 self.is_playing = True
-                self.pushbutton_play.setText("Stop")
+                self.pushbutton_play.setText("▶")
 
 
 
     def remove_sound(self):
-        pass
+        current_item = self.listWidget.currentItem()
+        if current_item:
+            row = self.listWidget.currentRow()
+            self.listWidget.takeItem(row)
         
 
 
