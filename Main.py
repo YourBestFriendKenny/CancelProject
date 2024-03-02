@@ -44,11 +44,12 @@ class Player(QWidget, GuiMain.Ui_Form):
         else:
             item = self.listWidget.currentItem()
             if item:
-                filename = os.path.join(self.dir, item.text())
+                file_name = item.text() + ".mp3"  # Добавляем расширение .mp3
+                filename = os.path.join(self.dir, file_name)
                 self.sound_mixer.music.load(filename)
                 self.sound_mixer.music.play()
                 self.is_playing = True
-                self.pushbutton_play.setText("▶")
+                self.pushbutton_play.setText("Stop")
 
 
 
@@ -82,15 +83,20 @@ class Player(QWidget, GuiMain.Ui_Form):
             pass
 
 
+
     # добавить директорию
     def add_sound(self):
         self.sound_mixer.music.stop()
-        dir = QtWidgets.QFileDialog.getExistingDirectory(self, "Select Direction")
-        if dir:
-            for filename in os.listdir(dir):
-                if filename.endswith(".mp3"):
-                    self.listWidget.addItem(os.path.join(filename))
-            self.dir = dir
+        current_items, _ = QtWidgets.QFileDialog.getOpenFileNames(self, "Select Files")
+        if current_items:  # Check if files were selected
+            for current_item in current_items:
+                if current_item.endswith(".mp3"):
+                    file_name = os.path.splitext(os.path.basename(current_item))[0]
+                    self.listWidget.addItem(file_name)
+            self.dir = os.path.dirname(current_items[-1])
+    
+    
+
     # регулировка громкости
     def volume_reg(self):
         self.sound_mixer.music.set_volume(self.horizontalSlider.value() / 100)
