@@ -88,7 +88,7 @@ class Player(QWidget, GuiMain.Ui_Form):
     def add_sound(self):
         self.sound_mixer.music.stop()
         current_items, _ = QtWidgets.QFileDialog.getOpenFileNames(self, "Select Files")
-        if current_items:  # Check if files were selected
+        if current_items:  
             for current_item in current_items:
                 if current_item.endswith(".mp3"):
                     file_name = os.path.splitext(os.path.basename(current_item))[0]
