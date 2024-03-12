@@ -1,12 +1,12 @@
 import os 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QWidget
-import GuiMain
+import Gui
 from pygame import mixer
 import json
 import jsonpickle
 
-class Player(QWidget, GuiMain.Ui_Form):
+class Player(QWidget, Gui.Ui_Form):
     
     def __init__(self):
         super(Player, self).__init__()
@@ -56,15 +56,8 @@ class Player(QWidget, GuiMain.Ui_Form):
 
 
 
-    def remove_sound(self):
-        current_item = self.listWidget.currentItem()
-        if current_item:
-            row = self.listWidget.currentRow()
-            self.listWidget.takeItem(row)
-            self.sound_mixer.music.stop()
-            self.is_playing = False
-            self.pushbutton_play.setText("Play")
-        
+
+
 
 
 
@@ -140,7 +133,19 @@ class Player(QWidget, GuiMain.Ui_Form):
             self.sound_mixer.music.stop()
             self.is_playing = False
             self.pushbutton_play.setText("Play")
-    
+            
+            filename = "music_list.json"
+            music_list = []
+            for index in range(self.listWidget.count()):
+                music_list.append({"filename": self.listWidget.item(index).text()})
+            
+            try:
+                with open(filename, 'w') as f:
+                    json.dump(music_list, f)
+            except Exception as e:
+                print(f"Произошла ошибка при сохранении списка музыки: {e}")
+
+
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     player = Player()
