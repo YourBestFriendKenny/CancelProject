@@ -98,7 +98,7 @@ QSlider::handle:horizontal {
     padding: -4px 0px;  
 }
 QSlider::add-page:horizontal {
-    background:  white;
+   background-color: rgb(231,221,222);
 }
 QSlider::sub-page:horizontal {
     background: #fbac8b;
@@ -121,7 +121,8 @@ background: rgb()
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(231,221,222);</string>
+    <string notr="true">background-color: rgb(231,221,222);
+border-radius: 10px;</string>
    </property>
   </widget>
   <widget class="QSlider" name="horizontalSlider">
@@ -150,7 +151,8 @@ QSlider::handle:horizontal {
     padding: -4px 0px;  
 }
 QSlider::add-page:horizontal {
-    background:  white;
+   background-color: rgb(231,221,222);
+
 }
 QSlider::sub-page:horizontal {
     background: #fbac8b;
@@ -166,7 +168,7 @@ background: rgb()
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>190</x>
      <y>0</y>
      <width>131</width>
      <height>31</height>

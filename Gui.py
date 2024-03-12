@@ -10,6 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from res_rc import *
+
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
@@ -61,7 +62,7 @@ class Ui_Form(object):
 "    padding: -4px 0px;  \n"
 "}\n"
 "QSlider::add-page:horizontal {\n"
-"    background:  white;\n"
+"   background-color: rgb(231,221,222);\n"
 "}\n"
 "QSlider::sub-page:horizontal {\n"
 "    background: #fbac8b;\n"
@@ -73,7 +74,8 @@ class Ui_Form(object):
         self.horizontalSlider_3.setObjectName("horizontalSlider_3")
         self.listWidget = QtWidgets.QListWidget(Form)
         self.listWidget.setGeometry(QtCore.QRect(60, 40, 361, 321))
-        self.listWidget.setStyleSheet("background-color: rgb(231,221,222);")
+        self.listWidget.setStyleSheet("background-color: rgb(231,221,222);\n"
+"border-radius: 10px;")
         self.listWidget.setObjectName("listWidget")
         self.horizontalSlider = QtWidgets.QSlider(Form)
         self.horizontalSlider.setGeometry(QtCore.QRect(60, 379, 81, 31))
@@ -93,7 +95,8 @@ class Ui_Form(object):
 "    padding: -4px 0px;  \n"
 "}\n"
 "QSlider::add-page:horizontal {\n"
-"    background:  white;\n"
+"   background-color: rgb(231,221,222);\n"
+"\n"
 "}\n"
 "QSlider::sub-page:horizontal {\n"
 "    background: #fbac8b;\n"
@@ -104,7 +107,7 @@ class Ui_Form(object):
         self.horizontalSlider.setOrientation(QtCore.Qt.Horizontal)
         self.horizontalSlider.setObjectName("horizontalSlider")
         self.label = QtWidgets.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(200, 0, 131, 31))
+        self.label.setGeometry(QtCore.QRect(190, 0, 131, 31))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)
@@ -169,7 +172,6 @@ class Ui_Form(object):
         self.pushbutton_remove.setText(_translate("Form", "-"))
         self.pushbutton_next.setText(_translate("Form", ">"))
         self.pushbutton_back.setText(_translate("Form", "<"))
-
 
 if __name__ == "__main__":
         import sys
