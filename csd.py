@@ -19,6 +19,7 @@ class Player(QWidget, GuiMain.Ui_Form):
         self.pushbutton_back.clicked.connect(self.back_sound)
         self.pushbutton_next.clicked.connect(self.next_sound)   
         self.pushbutton_add.clicked.connect(self.add_sound)
+        self.pushbutton_remove.clicked.connect(self.remove_sound)
 
         # двойное нажание по треку включит его
         self.listWidget.doubleClicked.connect(self.toggle_sound)
@@ -114,6 +115,17 @@ class Player(QWidget, GuiMain.Ui_Form):
                 json.dump(music_list, f)
         except Exception as e:
             print(f"Произошла ошибка при сохранении списка музыки: {e}")
+
+    def remove_sound(self):
+        current_item = self.listWidget.currentItem()
+        if current_item:
+            row = self.listWidget.currentRow()
+            self.listWidget.takeItem(row)
+            self.sound_mixer.music.stop()
+            self.is_playing = False
+            self.pushbutton_play.setText("Play")
+
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])

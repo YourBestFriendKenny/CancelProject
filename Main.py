@@ -3,6 +3,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QWidget
 import GuiMain
 from pygame import mixer
+import json
+import jsonpickle
 
 class Player(QWidget, GuiMain.Ui_Form):
     
@@ -94,13 +96,11 @@ class Player(QWidget, GuiMain.Ui_Form):
                     file_name = os.path.splitext(os.path.basename(current_item))[0]
                     self.listWidget.addItem(file_name)
             self.dir = os.path.dirname(current_items[-1])
-    
-    
+
 
     # регулировка громкости
     def volume_reg(self):
         self.sound_mixer.music.set_volume(self.horizontalSlider.value() / 100)
-
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     player = Player()
