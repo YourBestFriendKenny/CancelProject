@@ -113,7 +113,10 @@ class Player(QWidget, Gui.Ui_Form):
             self.listWidget.takeItem(row)
             self.sound_mixer.music.stop()
             self.is_playing = False
-            self.pushbutton_play.setText("Play")
+            icon = QtGui.QIcon()
+            icon.addPixmap(QtGui.QPixmap(":/photo/Photo_on_app/pngwing.com(1).png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            self.pushbutton_play.setIcon(icon)
+            self.pushbutton_play.setIconSize(QtCore.QSize(13, 13))
             
             filename = "music_list.json"
             music_list = []
