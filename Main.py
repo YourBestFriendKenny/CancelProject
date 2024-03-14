@@ -24,6 +24,7 @@ class Player(QWidget, Gui.Ui_Form):
         # двойное нажание по треку включит его
         self.listWidget.doubleClicked.connect(self.toggle_sound)
 
+
         # устанавливаем громкость по умолчанию
         self.horizontalSlider.setMinimum(0)
         self.horizontalSlider.setMaximum(100)
@@ -37,28 +38,6 @@ class Player(QWidget, Gui.Ui_Form):
         self.is_playing = False
 
         self.load_music_list()
-
-    # проверка состояния музыки
-    def toggle_sound(self):
-        if self.is_playing:
-            self.sound_mixer.music.stop()
-            self.is_playing = False
-            self.pushbutton_play.setText("Play")
-        else:
-            item = self.listWidget.currentItem()
-            if item:
-                file_name = item.text() + ".mp3"  # Добавляем расширение .mp3
-                filename = os.path.join(self.dir, file_name)
-                self.sound_mixer.music.load(filename)
-                self.sound_mixer.music.play()
-                self.is_playing = True
-                self.pushbutton_play.setText("Stop")
-
-
-
-
-
-
 
 
     # предыдущая музыка
@@ -100,6 +79,7 @@ class Player(QWidget, Gui.Ui_Form):
     def volume_reg(self):
         self.sound_mixer.music.set_volume(self.horizontalSlider.value() / 100)
 
+    #загрузить файлы музыки
     def load_music_list(self):
         filename = "music_list.json"
         if os.path.isfile(filename): 
@@ -125,6 +105,7 @@ class Player(QWidget, Gui.Ui_Form):
         except Exception as e:
             print(f"Произошла ошибка при сохранении списка музыки: {e}")
 
+    #удалить музыку
     def remove_sound(self):
         current_item = self.listWidget.currentItem()
         if current_item:

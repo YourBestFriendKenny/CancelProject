@@ -54,11 +54,20 @@
     <iconset resource="res.qrc">
      <normaloff>:/photo/Photo_on_app/pngwing.com(1).png</normaloff>:/photo/Photo_on_app/pngwing.com(1).png</iconset>
    </property>
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>16</height>
+    </size>
+   </property>
    <property name="checkable">
     <bool>false</bool>
    </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
    <property name="autoRepeat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="autoExclusive">
     <bool>false</bool>
@@ -76,9 +85,9 @@
   <widget class="QSlider" name="horizontalSlider_3">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>60</x>
      <y>430</y>
-     <width>341</width>
+     <width>351</width>
      <height>20</height>
     </rect>
    </property>
