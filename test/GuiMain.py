@@ -4,7 +4,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Form(object):
     def setupUi(self, Form):
-        Form.setObjectName("Form")
+        Form.setObjectName("Peach")
         Form.setEnabled(True)
         Form.resize(1165, 844)
         self.widget = QtWidgets.QWidget(Form)

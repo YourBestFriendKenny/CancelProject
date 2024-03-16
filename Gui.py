@@ -168,7 +168,7 @@ class Ui_Form(object):
 
         def retranslateUi(self, Form):
                 _translate = QtCore.QCoreApplication.translate
-                Form.setWindowTitle(_translate("Form", "Form"))
+                Form.setWindowTitle(_translate("Form", "Peach🍑"))
                 self.label.setText(_translate("Form", "Peach🍑"))
                 self.pushbutton_add.setText(_translate("Form", "+"))
                 self.pushbutton_remove.setText(_translate("Form", "-"))
@@ -180,6 +180,8 @@ class Ui_Form(object):
                 if self.is_playing:
                         self.is_playing = False
                         self.sound_mixer.music.stop()
+
+
                         icon = QtGui.QIcon()
                         icon.addPixmap(QtGui.QPixmap(":/photo/Photo_on_app/pngwing.com(1).png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
                         self.pushbutton_play.setIcon(icon)
@@ -202,7 +204,7 @@ class Ui_Form(object):
 
 
 
-if __name__ == "main":
+if __name__ == "__main__":
         import sys
         app = QtWidgets.QApplication(sys.argv)
         Form = QtWidgets.QWidget()
