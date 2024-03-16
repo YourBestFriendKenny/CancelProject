@@ -77,7 +77,7 @@ class Player(QWidget, Gui.Ui_Form):
 
     # регулировка громкости
     def volume_reg(self):
-        self.sound_mixer.music.set_volume(self.horizontalSlider.value() / 100)
+        self.sound_mixer.music.set_volume(self.horizontalSlider.value() / 100) #  ниже конекта кнопок установил значение слайдера
 
     #загрузить файлы музыки
     def load_music_list(self):
