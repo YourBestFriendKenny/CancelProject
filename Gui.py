@@ -1,6 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from res_rc import *
 import os
+import json #+ coulneff 21.03
 
 class Ui_Form(object):
         def setupUi(self, Form):
@@ -178,10 +179,26 @@ class Ui_Form(object):
                         self.pushbutton_play.setIconSize(QtCore.QSize(13, 13))
                         
                 else:
+                        #+ coulneff 21.03
+                        data = []    
+                        with open("music_list.json", 'r') as f:
+                                data = json.load(f)
+                        #- coulneff 21.03
                         item = self.listWidget.currentItem()
                         if item:
-                                file_name = item.text() + ".mp3"  # Добавляем расширение .mp3
-                                filename = os.path.join(self.dir, file_name)
+                                filename = ""
+                                for itm in data:
+                                    pathInfo = str(itm["filename"])
+                                    textItem = item.text()
+                                    print(pathInfo.find(textItem))
+                                    if pathInfo.find(textItem) != -1:
+                                            filename = pathInfo
+                                            break
+                                    else:
+                                            continue
+                                #- Coulneff 21.03    
+                                #file_name = item.text() + ".mp3"  # Добавляем расширение .mp3
+                                #filename = os.path.join(self.dir, file_name)
                                 self.sound_mixer.music.load(filename)
                                 self.sound_mixer.music.play()
                                 self.is_playing = True

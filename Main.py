@@ -72,7 +72,7 @@ class Player(QWidget, Gui.Ui_Form):
                     file_name = os.path.splitext(os.path.basename(current_item))[0]
                     self.listWidget.addItem(file_name)
             self.dir = os.path.dirname(current_items[-1])
-            self.save_music_list()
+            self.save_music_list(current_items) #coulneff: (1) передаем список того что хотим открыть
 
 
     # регулировка громкости
@@ -80,28 +80,41 @@ class Player(QWidget, Gui.Ui_Form):
         self.sound_mixer.music.set_volume(self.horizontalSlider.value() / 100) #  ниже конекта кнопок установил значение слайдера
 
     #загрузить файлы музыки
-    def load_music_list(self):
+    def load_music_list(self): 
         filename = "music_list.json"
         if os.path.isfile(filename): 
             try:
                 with open(filename, 'r') as f:
                     data = json.load(f)
+                    print(data) 
                     for music_data in data:
-                        self.listWidget.addItem(music_data["filename"])
+                        pathInfo = music_data["filename"] 
+                        chertochka = pathInfo.rfind("/") #получит индекс ближейшей '/'
+                        tochka = pathInfo.rfind(".")  #получит индекс ближайшей '.'
+                        name = pathInfo[chertochka+1:tochka] # text[число:число] - позволяет вырезать кусок текста из строки 
+                        self.listWidget.addItem(name)
             except FileNotFoundError:
                 print(f"Файл '{filename}' не найден.")
             except Exception as e:
                 print(f"Произошла ошибка при загрузке списка музыки: {e}")
 
     # Сохранение списка музыкальных файлов в файл JSON
-    def save_music_list(self):
+    def save_music_list(self,current_items):            #coulneff: (2) мы добавили параметр чтоб у нас был список того что мы открываем, из музыки
         filename = "music_list.json"
         music_list = []
-        for index in range(self.listWidget.count()):
-            music_list.append({"filename": self.listWidget.item(index).text()})
+        for obj in current_items:       #coulneff: (3) проходим по списку нашей музыки и обрабатываем, добавляя в наш список
+            full_path = obj  # добавляем полный путь к файлу  
+            music_list.append({"filename": full_path}) #self.listWidget.item(index).text()})
+
+        #coulneff: (4) чтобы у нас не стёрлась музыка которая уже была, то открываем наш файл с музыкой и просто записываем его в массив
+        data = []    
+        with open(filename, 'r') as f:
+            data = json.load(f)
+        #coulneff: (5) потом записываем в этот массив нашу новую музыку и сохраняем
+        data.extend(music_list)
         try:
-            with open(filename, 'w') as f:
-                json.dump(music_list, f)
+            with open(filename, 'w+') as f:
+                json.dump(data, f)
         except Exception as e:
             print(f"Произошла ошибка при сохранении списка музыки: {e}")
 
