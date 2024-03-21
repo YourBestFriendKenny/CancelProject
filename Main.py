@@ -6,7 +6,7 @@ from pygame import mixer
 import json
 import jsonpickle
 
-class Player(QWidget, Gui.Ui_Form):
+class Player(QWidget, Gui.Ui_Peach):
     
     def __init__(self):
         super(Player, self).__init__()
