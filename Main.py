@@ -5,7 +5,10 @@ import Gui
 from pygame import mixer
 import json
 import jsonpickle
-
+#+ Coulneff 16.03.2024 
+# threading - многопоточность, нужна для того чтобы двигать ползунок
+from threading import Thread
+#- Coulneff 16.03.2024
 class Player(QWidget, Gui.Ui_Peach):
     
     def __init__(self):
@@ -30,14 +33,18 @@ class Player(QWidget, Gui.Ui_Peach):
         self.horizontalSlider.setMaximum(100)
         self.horizontalSlider.setValue(50)
         self.horizontalSlider.valueChanged.connect(self.volume_reg)
-
+ 
         # нужная нам дериктория загружается в listWidget
         self.dir = ""
         self.sound_mixer = mixer
         self.sound_mixer.init()
         self.is_playing = False
 
-        self.load_music_list()
+        self.load_music_list() 
+        #+ Coulneff 16.03.2024 - запуск многопоточности
+        variable = Thread(target=self.switcherNeff, args=(self,))
+        variable.start()
+        #- Coulneff 16.03.2024
 
 
     # предыдущая музыка
@@ -72,21 +79,20 @@ class Player(QWidget, Gui.Ui_Peach):
                     file_name = os.path.splitext(os.path.basename(current_item))[0]
                     self.listWidget.addItem(file_name)
             self.dir = os.path.dirname(current_items[-1])
-            self.save_music_list(current_items) #coulneff: (1) передаем список того что хотим открыть
+            self.save_music_list(current_items)
 
 
     # регулировка громкости
     def volume_reg(self):
-        self.sound_mixer.music.set_volume(self.horizontalSlider.value() / 100) #  ниже конекта кнопок установил значение слайдера
+        self.sound_mixer.music.set_volume(self.horizontalSlider.value() / 100)
 
     #загрузить файлы музыки
-    def load_music_list(self): 
+    def load_music_list(self):
         filename = "music_list.json"
         if os.path.isfile(filename): 
             try:
                 with open(filename, 'r') as f:
                     data = json.load(f)
-                    print(data) 
                     for music_data in data:
                         pathInfo = music_data["filename"] 
                         chertochka = pathInfo.rfind("/") #получит индекс ближейшей '/'
@@ -99,9 +105,10 @@ class Player(QWidget, Gui.Ui_Peach):
                 print(f"Произошла ошибка при загрузке списка музыки: {e}")
 
     # Сохранение списка музыкальных файлов в файл JSON
-    def save_music_list(self,current_items):            #coulneff: (2) мы добавили параметр чтоб у нас был список того что мы открываем, из музыки
+    def save_music_list(self,current_items):
         filename = "music_list.json"
         music_list = []
+
         for obj in current_items:       #coulneff: (3) проходим по списку нашей музыки и обрабатываем, добавляя в наш список
             full_path = obj  # добавляем полный путь к файлу  
             music_list.append({"filename": full_path}) #self.listWidget.item(index).text()})
@@ -117,7 +124,6 @@ class Player(QWidget, Gui.Ui_Peach):
                 json.dump(data, f)
         except Exception as e:
             print(f"Произошла ошибка при сохранении списка музыки: {e}")
-
     #удалить музыку
     def remove_sound(self):
         current_item = self.listWidget.currentItem()

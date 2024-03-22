@@ -20,8 +20,8 @@ from mutagen.mp3 import MP3
 cstfilename = ""
 #- Coulneff 16.03.2024
 from PyQt5 import QtCore, QtGui, QtWidgets
-from res_rc import *
 import json
+
 
 class Ui_Peach(object):
         def setupUi(self, Peach):
@@ -199,7 +199,10 @@ class Ui_Peach(object):
                 self.pushbutton_back.setText(_translate("Peach", "<"))
                 self.pushButton.setText(_translate("Peach", "🍑"))
 
+
+
         def toggle_sound(self):
+                global cstfilename
                 if self.is_playing:
                         self.is_playing = False
                         self.sound_mixer.music.stop()
@@ -211,14 +214,15 @@ class Ui_Peach(object):
                         self.pushbutton_play.setIconSize(QtCore.QSize(13, 13))
                         
                 else:
-                        #+ coulneff 21.03
-                        data = []    
+                        data = []
                         with open("music_list.json", 'r') as f:
                                 data = json.load(f)
-                        #- coulneff 21.03
+
                         item = self.listWidget.currentItem()
                         if item:
-                                filename = ""
+                                #+ sonya_marmeladova 22.03.2024
+                                file_name = item.text()  # Добавляем расширение .mp3
+                                filename = os.path.join(self.dir, file_name)
                                 for itm in data:
                                     pathInfo = str(itm["filename"])
                                     textItem = item.text()
@@ -228,9 +232,11 @@ class Ui_Peach(object):
                                             break
                                     else:
                                             continue
-                                #- Coulneff 21.03    
-                                #file_name = item.text() + ".mp3"  # Добавляем расширение .mp3
-                                #filename = os.path.join(self.dir, file_name)
+                                #- sonya_marmeladova22.03.2024
+
+                                #+ Coulneff 16.03.2024 - нужен лишь чтоб получить файл который мы выбрали для воспроизведения
+                                cstfilename = filename
+                                #- Coulneff 16.03.2024
                                 self.sound_mixer.music.load(filename)
                                 self.sound_mixer.music.play()
                                 self.is_playing = True
@@ -240,8 +246,32 @@ class Ui_Peach(object):
                                 icon2.addPixmap(QtGui.QPixmap(":/photo/Photo_on_app/pngwing.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
                                 self.pushbutton_play.setIconSize(QtCore.QSize(16, 16))
                                 self.pushbutton_play.setIcon(icon2)
-
-
+        
+        #+ Coulneff 16.03.2024
+        # Из минусов этого варианта, нужно стопать процесс в многопоточности, иначе будет работать в фоне -> кушать оперативку, но вроде не очень и заметно
+        # Работате в бесконечном цикле, и если замечает что запустилась музыка, получает её длинну и потом двигает ползунок
+        # Иначе всё сбрасывает и дальше бесконечно проверяет
+        def switcherNeff(self,Form):
+                locrs = True
+                it = 0
+                while True:
+                        if (self.is_playing):
+                                if locrs:
+                                        it = 0
+                                        locrs = False
+                                        self.horizontalSlider_3.setMinimum(0)
+                                        audio = MP3(cstfilename) 
+                                        self.horizontalSlider_3.setMaximum(int(audio.info.length)) 
+                                        
+                                else:
+                                        self.horizontalSlider_3.setValue(it)
+                                        time.sleep(1)
+                                        it += 1
+                        else:
+                                it = 0
+                                locrs = True
+                                self.horizontalSlider_3.setValue(0)
+        #- Coulneff 16.03.2024
 
 if __name__ == "__main__":
         import sys
