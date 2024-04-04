@@ -1,5 +1,5 @@
 import speech_recognition as sr
-from Recognitition.MainMusicStart import Music1, Music2
+from MainMusicStart import Music1
 
 
 
@@ -21,18 +21,18 @@ def recognize_speech(): #   функция распознования речи �
         print(r.recognize_google(audio, language="ru-RU"))
 
 
-    commands = {"включи песню bad blood": Music1, "пока": exit}
+    commands = {"включи песню the real slim shady": Music1}
+
 
     try:
             # Использую Google Web Speech API для распознавания аудио
         text = r.recognize_google(audio, language="ru-RU")
         if text.lower() in commands:
             Music1()
-            
         else:
             print("я не могу распознать")
     except sr.UnknownValueError:
                 print("Извините, не удалось распознать вашу речь.")
 
-
+recognize_speech()
 

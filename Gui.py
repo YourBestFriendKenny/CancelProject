@@ -21,6 +21,7 @@ cstfilename = ""
 #- Coulneff 16.03.2024
 from PyQt5 import QtCore, QtGui, QtWidgets
 import json
+from res_rc import *
 
 
 class Ui_Peach(object):
@@ -192,7 +193,7 @@ class Ui_Peach(object):
 
         def retranslateUi(self, Peach):
                 _translate = QtCore.QCoreApplication.translate
-                Peach.setWindowTitle(_translate("Peach", "Form"))
+                Peach.setWindowTitle(_translate("Peach", "Peach🍑"))
                 self.pushbutton_add.setText(_translate("Peach", "+"))
                 self.pushbutton_remove.setText(_translate("Peach", "-"))
                 self.pushbutton_next.setText(_translate("Peach", ">"))

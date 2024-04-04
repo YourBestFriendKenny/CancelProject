@@ -9,6 +9,8 @@ import jsonpickle
 # threading - многопоточность, нужна для того чтобы двигать ползунок
 from threading import Thread
 #- Coulneff 16.03.2024
+import time
+
 class Player(QWidget, Gui.Ui_Peach):
     
     def __init__(self):
@@ -33,7 +35,7 @@ class Player(QWidget, Gui.Ui_Peach):
         self.horizontalSlider.setMaximum(100)
         self.horizontalSlider.setValue(50)
         self.horizontalSlider.valueChanged.connect(self.volume_reg)
- 
+
         # нужная нам дериктория загружается в listWidget
         self.dir = ""
         self.sound_mixer = mixer
@@ -41,10 +43,8 @@ class Player(QWidget, Gui.Ui_Peach):
         self.is_playing = False
 
         self.load_music_list() 
-        #+ Coulneff 16.03.2024 - запуск многопоточности
-        variable = Thread(target=self.switcherNeff, args=(self,))
-        variable.start()
-        #- Coulneff 16.03.2024
+        
+
 
 
     # предыдущая музыка
@@ -149,8 +149,16 @@ class Player(QWidget, Gui.Ui_Peach):
                 print(f"Произошла ошибка при сохранении списка музыки: {e}")
 
 
+        #+ Coulneff 16.03.2024 - запуск многопоточности
+        variable = Thread(target=self.switcherNeff, args=(self,))
+        variable.start()
+
+
+
+
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     player = Player()
     player.show()
     app.exec()
+
